@@ -1,7 +1,17 @@
 package main
 
-import "fmt"
+import (
+	"github.com/hexley21/star-gopher/internal/engine"
+	"github.com/hexley21/star-gopher/internal/renderer"
+)
 
 func main() {
-    fmt.Println("Hello World")
+    width := 20
+    height := 20
+
+    renderer.HideCursor()
+    defer renderer.ShowCursor()
+
+    game := engine.NewGameEngine(width, height)
+    game.Run()
 }
